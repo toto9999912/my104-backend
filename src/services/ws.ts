@@ -31,6 +31,7 @@ const initializeSocket = (server: HttpServer) => {
   console.log("有人嘗試連接")
 
   io.use((socket: Socket, next: (err?: ExtendedError) => void) => {
+    console.log("開始驗證啦!!違法亂紀速速離去!")
     const token = socket.handshake.headers.authorization
     if (token) {
       const key = process.env.JWT_SECRET
