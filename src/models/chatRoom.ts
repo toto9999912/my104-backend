@@ -24,6 +24,7 @@ interface IChatRoom extends Document {
 const chatRoomSchema = new Schema<IChatRoom>({
   members: {
     type: [Schema.Types.ObjectId],
+    ref: "user",
     required: true,
     default: []
   },
